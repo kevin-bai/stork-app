@@ -1,3 +1,5 @@
 <p>
-  stars works!
+  <span *ngFor="let star of starsList" class="glyphicon glyphicon-star"
+   [class.glyphicon-star-empty]="star===false"></span>
+
 </p>
