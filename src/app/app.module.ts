@@ -13,7 +13,7 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 
 const appRoutes: Routes = [
   {
-    path: 'detail',
+    path: 'detail/:id',
     component: ProductDetailComponent
   }
 ];
@@ -26,15 +26,14 @@ const appRoutes: Routes = [
     NavbarComponent,
     ProductComponent,
     StarsComponent,
-    SearchComponent
-    ,
+    SearchComponent,
     ProductDetailComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     )
   ],
   providers: [],
