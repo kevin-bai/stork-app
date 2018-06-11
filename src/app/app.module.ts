@@ -10,9 +10,19 @@ import {ProductComponent} from './product/product.component';
 import {StarsComponent} from './stars/stars.component';
 import {SearchComponent} from './search/search.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
-import { SpyDirective } from './spy.directive';
+import {SpyDirective} from './spy.directive';
+import {HomeComponent} from './home/home.component';
 
 const appRoutes: Routes = [
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
   {
     path: 'detail/:id',
     component: ProductDetailComponent
@@ -29,13 +39,14 @@ const appRoutes: Routes = [
     StarsComponent,
     SearchComponent,
     ProductDetailComponent,
-    SpyDirective
+    SpyDirective,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: false } // <-- debugging purposes only
+      {enableTracing: false} // <-- debugging purposes only
     )
   ],
   providers: [],
