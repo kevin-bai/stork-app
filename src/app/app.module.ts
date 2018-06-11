@@ -12,6 +12,7 @@ import {SearchComponent} from './search/search.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {SpyDirective} from './spy.directive';
 import {HomeComponent} from './home/home.component';
+import { Code404Component } from './code404/code404.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +27,10 @@ const appRoutes: Routes = [
   {
     path: 'detail/:id',
     component: ProductDetailComponent
+  },
+  {
+    path: '**',
+    component: Code404Component
   }
 ];
 
@@ -40,7 +45,8 @@ const appRoutes: Routes = [
     SearchComponent,
     ProductDetailComponent,
     SpyDirective,
-    HomeComponent
+    HomeComponent,
+    Code404Component
   ],
   imports: [
     BrowserModule,
