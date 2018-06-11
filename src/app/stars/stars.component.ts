@@ -1,21 +1,31 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, AfterContentInit, AfterViewInit} from '@angular/core';
+import {LoggerService} from '../logger.service';
 
 @Component({
   selector: 'app-stars',
   templateUrl: './stars.component.html',
-  styleUrls: ['./stars.component.scss']
+  styleUrls: ['./stars.component.scss'],
+  providers: [LoggerService]
 })
-export class StarsComponent implements OnInit {
+export class StarsComponent implements OnInit, AfterContentInit, AfterViewInit {
 
   @Input() rating: number;
   starsList: boolean[];
 
-  constructor() {
+  constructor(public logger: LoggerService) {
   }
 
   ngOnInit() {
-    // console.log(`rating:${this.rating}`)
+    console.log(`onInit`)
     this.getStarNum();
+  }
+
+  ngAfterContentInit() {
+    console.log('AfterContentInit');
+  }
+
+  ngAfterViewInit() {
+    console.log('AfterViewInit');
   }
 
   getStarNum(): void {
@@ -24,5 +34,9 @@ export class StarsComponent implements OnInit {
       this.starsList.push(this.rating > index);
     }
     // console.log(this.starsList);
+  }
+
+  getName(el): void {
+    console.log(el);
   }
 }

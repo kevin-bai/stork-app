@@ -10,6 +10,7 @@ import {ProductComponent} from './product/product.component';
 import {StarsComponent} from './stars/stars.component';
 import {SearchComponent} from './search/search.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
+import { SpyDirective } from './spy.directive';
 
 const appRoutes: Routes = [
   {
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     ProductComponent,
     StarsComponent,
     SearchComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    SpyDirective
   ],
   imports: [
     BrowserModule,
